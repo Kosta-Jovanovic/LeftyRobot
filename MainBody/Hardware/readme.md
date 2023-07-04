@@ -1,4 +1,4 @@
-U ovom foilderu nalaziće se komponente koje su nam potrebne za  projekat.
+U ovom fajlu nalaziće se komponente koje su nam potrebne za  projekat.
 <p>Komponente koje su potrebne (stigle):</p>
 <ol>
   <li>4 x Nems 17 42BYGH34H-23D </li>
