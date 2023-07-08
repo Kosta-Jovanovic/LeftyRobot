@@ -6,3 +6,7 @@ Drugi dan(03.06.2023):
 Treći dan(04.07.2023.):
 - započeta izrada aplikacije
 - rešavanje problema u vezi nedostatka bakarne šipke, koja služi za spajanje rolera sa osnovom Mecanum Wheels-a
+Četvrti dan(05.07.2023.):
+- sklapanje Mecanum Wheels-a
+- dovršavanje aplikacije i koda za Arduino
+- ostala nam je šasija za isprintovati, ali zbog nefunkcionisanja 3d štampača je to trenutno neizvodljivo
