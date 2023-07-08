@@ -1,6 +1,6 @@
 # LeftyRobot
 Modular rover mecanum wheel vehicle that can add different modules for different purposes 
-# Zimski seminar:
+# Zimski seminar
 <p>Prvi dan(02.06.2023):</p>
 <ol></ol>
 <li>napravljen 3D model osnovnog dela robota</li> 
