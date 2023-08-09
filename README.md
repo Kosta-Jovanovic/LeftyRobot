@@ -1,23 +1,31 @@
-# LeftyRobot
+# Lefty Robot short description
 Modular rover mecanum wheel vehicle that can add different modules for different purposes 
 # Zimski seminar
-Projekat je rađen u Istraživačkoj stanici Petnica (01.07- 07.07.2023.), na seminaru elektronike. 
+Project was made possible in science center Petnica (01.07- 07.07.2023.), Seminar of electronics. 
 <ol></ol>
-<p>Prvi dan (02.06.2023):</p>
-<li>napravljen 3D model osnovnog dela robota</li> 
-<li>napravljen 3D model Mecanum Wheels-a</li>  
+<p>First Day (02.06.2023):</p>
+<li>3d model of robot core was made</li> 
+<li>3d model of mechanum wheels was made</li>  
 <ol></ol>
-<p>Drugi dan (03.06.2023):</p>
-<li>štampanje delova pomoću 3D štampača</li>
+<p>Second day (03.06.2023):</p>
+<li>3d printing of parts</li>
 <ol></ol>
-<p>Treći dan (04.07.2023.):</p>
-<li>započeta izrada aplikacije</li>
-<li>rešavanje problema u vezi nedostatka bakarne šipke, koja služi za spajanje rolera sa osnovom Mecanum Wheels-a</li>
+<p>Third day (04.07.2023.):</p>
+<li>Test application construction started</li>
+<li>Fixing problems with mechanum wheels</li>
 <ol></ol>
-<p>Četvrti dan (05.07.2023.):</p>
-<li>sklapanje Mecanum Wheels-a</li>
-<li>dovršavanje aplikacije i koda za Arduino</li>
-<p><li>ostala nam je šasija za isprintovati, ali zbog nefunkcionisanja 3d štampača je to trenutno neizvodljivo</li></p>
-<p>Za početak smo hteli da se robot kreće uz pomoć aplikacije, a kada završimo osnovni deo robota kao i kada odredimo module koje će posedovati, napisaćemo kod za ml.</p>
-<p>Kraći opis koda za Arduino:</p>
-Koristili smo dve biblioteke SoftwareSerial i AccelStepper. Prvu biblioteku koristimo jer nam omogućava korišćenje serijske komunikacije na bilo kojem digitalnom pinu, u našem slučaju komunikacije putem Bluetooth modula. Dok AccelStepper biblioteka omogućava upravljanje stepper motorima. Omogućava jednostavnu kontrolu brzine i smera, podržava i ubrzanje i usporavanje motora. Digitalni pinovi 40 do 47 su odabrani jer se nalaze na skupini „Port C“ na Arduino Mega ploči. Ovi pinovi su povezani sa odgovarajućim pinovima na mikrokontroleru, što omogućuje laku upotrebu s digitalnim ulaznim/izlaznim funkcijama, a pinovi 8 i 9 su odabrani kao standardni pinovi za serijsku komunikaciju. Postavljanje maksimalne brzine motora koristi se kako bi se ograničila brzina motora i time sprečilo da robot prebrzo ide i izgubi kontrolu. „dataIn“ su svi podaci koje šalje drugi uređaj, a koje ovaj kod čita i koristi za kontrolu robota. Kada uz pomoć „dataIn“ odredimo postojeća „m“, određujemo za svako „m“ određenu funkciju, naprimer if(m==4), poziva funkciju „moveSidewaysLeft()“ koja pokreće robota da se kreće bočno ulevo. Dok kada je varijabla „m“ jednaka 12 ili 14 postoji malo više uslova za pokretanje određenih funkcija. Funkcija „moveTo()“ postavlja poziciju kju točak treba dostići, „setSpeed()“ se koristi za postavljanje brzine točkova, a ako neki točak nije dostigao dobru poziciju koristi se funkcija „runSpeedToPosition()“ kako bi povećala brzinu i približila ih ciljnoj poziciji. Poslednjih osam funkcija zapravo upravljaju kretanjem robota u različitim smerovima. Svaka funkcija određena je kombinacijom „wheelSpeed“, „-wheelSpeed“ i „0“ kako bi dobili različite smerove.
+<p>Fourth day (05.07.2023.):</p>
+<li>Construction of mechanum wheels</li>
+<li>Finishing of the test app</li>
+<p><li>There is chassy left to print out, but cause of the problem with 3d printers it is currently imposible</li></p>
+<p>For the start we wanted robot to be functional only trough app, and when we finish robot core and determine the modules that we will use, we will write code for ml.</p>
+# Short description of code
+We used two libraries, SoftwareSerial and AccelStepper. We use the first library because it enables us to use serial communication on any digital pin, in our case for communication through a Bluetooth module. Meanwhile, the AccelStepper library allows us to control stepper motors. It provides easy speed and direction control, supports acceleration and deceleration of the motor.
+
+Digital pins 40 to 47 were chosen because they are part of the "Port C" group on the Arduino Mega board. These pins are connected to the corresponding pins on the microcontroller, allowing easy use with digital input/output functions. Pins 8 and 9 were selected as the standard pins for serial communication.
+
+Setting a maximum motor speed is used to limit the motor's speed and prevent the robot from moving too fast and losing control. "dataIn" refers to all the data sent by another device, which this code reads and uses to control the robot. When we determine the existing "m" using "dataIn", we define a specific function for each "m". For example, if(m==4), the "moveSidewaysLeft()" function is called, which makes the robot move sideways to the left.
+
+When the variable "m" is equal to 12 or 14, there are a few more conditions for triggering certain functions. The "moveTo()" function sets the position the wheel needs to reach, "setSpeed()" is used to set the wheel speed, and if a wheel hasn't reached the correct position, the "runSpeedToPosition()" function is used to increase the speed and bring it closer to the target position.
+
+The last eight functions actually control the robot's movement in different directions. Each function is determined by a combination of "wheelSpeed", "-wheelSpeed", and "0" to achieve different directions.
