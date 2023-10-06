@@ -1,1 +1,1 @@
-Consider using a package manager for external libraries and packages and include a "requirements.txt" or "package.json" file to list dependencies
+Package menager and list of external libraries for LEFTY.
